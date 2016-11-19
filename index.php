@@ -30,7 +30,7 @@ class IndexRouter {
 
 		self::$_control = $route[0]; //Primeiro parametro da rota
 		self::$_action = ($route[1] != null) ? $route[1] : 'index'; //Segundo parametro da rota
-        self::$_params = array_slice($route, 2); //O resto apartir do 2 (0: controller, 1: action)
+        self::$_params = array_slice($route, 2, -1); //O resto apartir do 2 (0: controller, 1: action)
 
         require_once("app/Controller.php");
         require_once("app/Persistencia.php");
@@ -41,10 +41,11 @@ class IndexRouter {
 		$controller = self::$_control;
 		$file = "app/Controllers/{$controller}Controller.php";
 
+        //Se o arquivo existe, adiciona ele ao código
 		if(file_exists($file)) {
             require_once($file);
         }
-        else {
+        else { //Se existe, adiciona o controller de error e chama a action e404 (Erro 404)
 			self::$_control = "erro";
             self::$_action = "e404";
 			require_once("app/Controllers/erroController.php");
