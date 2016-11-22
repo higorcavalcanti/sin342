@@ -1,67 +1,145 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800);
-
-html, body {
-	padding: 0px;
-	margin: auto;
-
-	max-width: 1024px;
-
-	font-family: 'Open Sans', Sans-serif;
-	font-size: 16px;
-	overflow: hidden;
-}
-a {
-	text-decoration: none;
-	color: #000;
-}
-a:focus {
-	text-decoration: none;
-	color: #000;
-}
-a:hover {
-	text-decoration: none;
-	color: #000;
-}
-
-
-
-/*
-	Header
-*/
-header {
-	background-color: burlywood;
-}
-
-.navigation-bar {
+* html, body{
 	width: 100%;
-	height: 80px;
-}
-.logo {
-	display: inline-block;
-	vertical-align: top;
-	width: 150px;
-	margin: 10px 10px;
-}
-.navigation-bar > a {
-	display: inline-block;
-	vertical-align: top;
-	margin-right: 20px;
-	height: 80px;
-	line-height: 80px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
+body {
+	background-color: #F0F4F5;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin: 0;
+	color: #000;
+}
 
+p {
+	padding: 2px;
+	margin: 0px;
+}
 
-/*
-	Content
-*/
-#content {
+header {
+	height: 136px;
 	margin: auto;
-	max-width: 1024px;
+	width: 1024px;
+}
+
+#logo {
+	float: left;
+	padding: 45px 0 0 15px;
+	clear: both;
+}
+
+#search {
+	padding: 50px 0 0 50px;
+	float: left;
+	font-size: 12px;
+}
+.buscar {
+	width: 400px;
+	height: 32px;
+	padding: 10px;
+}
+.buscarSelect {
+	height: 55px;
+	padding: 18px 30px 18px 30px;
+	background-color: white;
+}
+#carrinho {
+	padding: 57px 0 0 0;
+	text-align: right;
 }
 
 
-img {
-	max-width: 100%;
+/*Menu */
+nav {
+	width: 1024px;
+	margin: auto;
+	height: 45px;
+	background-color: #e9353d;
+}
+
+ul.menu {
+	list-style-type: none;
+	float: left;
+	display: block;
+	width: 982px;
+	margin: 0;
+	padding: 0;
+}
+
+ul.menu li {
+	display: inline;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 36px;
+}
+
+nav ul li a:link, nav ul li a:visited {
+	display: block;
+	float: left;
+	padding: 5px 8px 0 8px;
+	margin: 0 14px 0 14px;
+	height: 36px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+}
+nav ul li a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+
+#conteudo {
 	height: auto;
+	width: 1024px;
+	margin: 40px auto;
+	background-color: #ffffff;
+}
+
+#conteudo h1 {
+	background-color: #F0F4F5;
+	padding: 0 0 15px 0;
+}
+
+#produtos {
+	float: left;
+}
+#produtos ul {
+	padding: 0 0 0 25px;
+}
+#produtos li {
+	float: left;
+	text-decoration: none;
+	padding: 5px;
+	display: block;
+}
+
+.boxProduto{
+	width: 150px;
+	height: 200px;
+	border: 1px solid rgba(116, 116, 116, 0.67);
+}
+
+footer {
+	width: 100%;
+	height: 120px;
+	background: #333;
+}
+.conteudoFooter {
+	width: 1024px;
+	margin: auto;
+}
+
+.imagemFoooter{
+	padding: 50px 0 0 10px ;
+	float: left;
+}
+
+.textoFooter {
+	padding: 50px 0 0 0;
+	text-align: right;
+	font-size: 13px;
+	color: #F0F4F5;
 }
