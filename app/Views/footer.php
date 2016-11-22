@@ -4,8 +4,12 @@
 
 <footer>
     <div class="conteudoFooter">
-        <img src="public/img/logo_footer.png" />
-        <div class="textoFooter">Copyright &copy; <?= copyright('2016') ?> - Livraria Virtual | Todos direitos reservados.</div>
+        <a href="./">
+            <img src="public/img/logo_footer.png" />
+        </a>
+        <div class="textoFooter">
+            Copyright &copy; <?= copyright('2016') ?> - <a href="./">Livraria Virtual</a> | Todos direitos reservados.
+        </div>
     </div>
 </footer>
 

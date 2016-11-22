@@ -17,6 +17,11 @@ p {
 	margin: 0;
 }
 
+a:link, a:visited  {
+	color: #fff;
+	text-decoration: none;
+}
+
 header {
 	height: 136px;
 	margin: auto;
@@ -75,17 +80,13 @@ ul.menu li {
 }
 
 nav ul li a:link, nav ul li a:visited {
-	display: block;
-	float: left;
-	padding: 5px 8px 5px 8px;
-	margin: 0 14px 0 14px;
-	height: 36px;
-	text-decoration: none;
-	color: #fff;
 	font-size: 14px;
+	display: block;
+	height: 36px;
+	float: left;
+	padding: 5px 25px 4px 25px;
 }
 nav ul li a:hover {
-	text-decoration: none;
 	background-color: #08498a;
 }
 
@@ -134,7 +135,6 @@ footer .conteudoFooter img {
 	padding: 50px 0 0 10px ;
 	float: left;
 }
-
 footer .conteudoFooter .textoFooter {
 	padding: 50px 0 0 0;
 	text-align: right;

@@ -9,7 +9,7 @@
 <body>
 <header>
     <div id="logo">
-        <a href="#">
+        <a href="./">
             <img src="public/img/logo.png" alt="" title="" border="0" width="202" height="85" />
         </a>
     </div>
