@@ -77,7 +77,7 @@ ul.menu li {
 nav ul li a:link, nav ul li a:visited {
 	display: block;
 	float: left;
-	padding: 5px 8px 0 8px;
+	padding: 5px 8px 5px 8px;
 	margin: 0 14px 0 14px;
 	height: 36px;
 	text-decoration: none;
@@ -85,8 +85,8 @@ nav ul li a:link, nav ul li a:visited {
 	font-size: 14px;
 }
 nav ul li a:hover {
-	color: #ccc;
 	text-decoration: none;
+	background-color: #08498a;
 }
 
 #conteudo {

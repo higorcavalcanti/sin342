@@ -32,10 +32,12 @@
 
 <nav>
     <ul class="menu">
-        <li><a href="home"> Home </a></li>
+        <li><a href="./"> Home </a></li>
         <li><a href="vendidos">Mais Vendidos</a></li>
         <li><a href="atendimento">Atendimento</a></li>
-        <li><a href="#">Fale Conosco</a></li>
+        <li><a href="carrinho">Meu Carrinho</a></li>
+        <li><a href="conta">Minha Conta</a></li>
+        <li><a href="login">Entrar/Cadastrar</a></li>
     </ul>
 </nav>
 
