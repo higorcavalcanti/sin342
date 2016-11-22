@@ -15,18 +15,18 @@
         </a>
     </div>
 
-    <div id="search">
+    <section id="search">
         <select class="buscarSelect">
             <option value="livro">Livro</option>
             <option value="autor">Autor</option>
             <option value="editora">Editora</option>
         </select>
         <input type="text" class="buscar" placeholder="Pesquisar">
-    </div>
+    </section>
 
     <div id="carrinho">
         <a href="carrinho">
-            <img class="carrinho_image" src="public/img/carrinho.png">
+            <img src="public/img/carrinho.png">
         </a>
     </div>
 </header>

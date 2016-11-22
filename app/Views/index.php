@@ -4,7 +4,9 @@
 
         <li>
             <div class="boxProduto">
-                <div class="image"></div>
+                <div class="image">
+                    <img src="public/img/foto.jpg">
+                </div>
                 <div> Titulo</div>
                 <div> Subtitulo</div>
             </div>
