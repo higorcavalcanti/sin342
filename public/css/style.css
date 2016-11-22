@@ -7,16 +7,14 @@
 
 body {
 	background-color: #F0F4F5;
-	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
-	margin: 0;
 	color: #000;
 }
 
 p {
 	padding: 2px;
-	margin: 0px;
+	margin: 0;
 }
 
 header {
@@ -36,12 +34,12 @@ header {
 	float: left;
 	font-size: 12px;
 }
-.buscar {
+#search input[type="text"] {
 	width: 400px;
 	height: 32px;
 	padding: 10px;
 }
-.buscarSelect {
+#search select {
 	height: 55px;
 	padding: 18px 30px 18px 30px;
 	background-color: white;
@@ -51,7 +49,6 @@ header {
 	padding: 57px 0 0 0;
 	text-align: right;
 }
-
 
 /*Menu */
 nav {
@@ -128,17 +125,17 @@ footer {
 	height: 120px;
 	background: #333;
 }
-.conteudoFooter {
+footer .conteudoFooter {
 	width: 1024px;
 	margin: auto;
 }
 
-.imagemFoooter{
+footer .conteudoFooter img {
 	padding: 50px 0 0 10px ;
 	float: left;
 }
 
-.textoFooter {
+footer .conteudoFooter .textoFooter {
 	padding: 50px 0 0 0;
 	text-align: right;
 	font-size: 13px;
