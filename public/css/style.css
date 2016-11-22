@@ -40,9 +40,16 @@ header {
 	font-size: 12px;
 }
 #search input[type="text"] {
-	width: 400px;
+	width: 350px;
 	height: 32px;
 	padding: 10px;
+}
+#search input[type="submit"] {
+    height: 55px;
+    padding: 10px 20px 10px;
+    background-color: #e9353d;
+    color: #FFF;
+    border: none;
 }
 #search select {
 	height: 55px;

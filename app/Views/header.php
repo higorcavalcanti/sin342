@@ -15,12 +15,15 @@
     </div>
 
     <section id="search">
-        <select>
-            <option value="livro">Livro</option>
-            <option value="autor">Autor</option>
-            <option value="editora">Editora</option>
-        </select>
-        <input type="text" placeholder="Pesquisar">
+        <form method="post" action="search">
+            <select name="tipo">
+                <option value="livro">Livro</option>
+                <option value="autor">Autor</option>
+                <option value="editora">Editora</option>
+            </select>
+            <input type="text" name="search" placeholder="Pesquisar">
+            <input type="submit" name="submit" value="Pesquisar">
+        </form>
     </section>
 
     <div id="carrinho">
