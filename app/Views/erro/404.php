@@ -1,2 +1,6 @@
 <h1>Erro 404</h1>
-A página solicitada não foi encontrada!
+<div>
+    <center>
+        <h2>A página solicitada não foi encontrada!</h2>
+    </center>
+</div>
