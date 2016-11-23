@@ -21,6 +21,10 @@ class UsuariosTable extends Table {
         $this->setObject($user);
     }
 
+    public function getByEmail($email) {
+        return parent::get(null, "email = ?", [$email], null);
+    }
+
     public function getByLogin($user, $pass) {
         return parent::get(null, "email = ? AND senha = ?", [$user, $pass], null);
     }

@@ -39,7 +39,9 @@ class Persistencia {
      * @return PDO
      */
 	public function conecta(){
-        return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+        $pdo = new PDO("mysql:host={$this->host};dbname={$this->db};charset=utf8", $this->user, $this->pass);
+        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        return $pdo;
 	}
 
     /**
@@ -76,10 +78,9 @@ class Persistencia {
         $query = "SELECT {$camposSQL} FROM {$tabela} {$where} {$orderbySQL}";
 
         $consulta = $this->conn->prepare($query);
-        $consulta->execute($whereValues);
 
         $arr = [];
-		if($consulta->errorCode()) {
+		if($consulta->execute($whereValues)) {
             $i = 0;
 			while($reg = $consulta->fetch(PDO::FETCH_ASSOC)){
 				$arr[$i++] = $reg;
@@ -97,22 +98,12 @@ class Persistencia {
      */
 	public function insert($tabela, $arrayCampos, $arrayValores){
 
-		foreach($arrayCampos as $key => $a)
-			$arrayCampos[$key] = $this->conn->quote($a); //Anti MySQL Injection
-
-		foreach($arrayValores as $key => $a) 
-			$arrayValores[$key] = $this->conn->quote($a); //Anti MySQL Injection
-
-
 		$arrayCampos = implode(", ", $arrayCampos);
-		$arrayValores = "'" . implode("', '",$arrayValores) . "'";
 		
-		$query = "INSERT INTO {$tabela} ({$arrayCampos}) VALUES (".str_repeat('?',count($arrayValores)).")";
+		$query = "INSERT INTO {$tabela} ({$arrayCampos}) VALUES (".str_repeat('?,',count($arrayValores)-1)."?)";
 
         $consulta = $this->conn->prepare($query);
-        $consulta->execute($arrayValores);
-
-        if($consulta->errorCode()) {
+        if(!$consulta->execute($arrayValores)) {
 			return false;
 		}
 		return $this->conn->lastInsertId();
@@ -139,11 +130,7 @@ class Persistencia {
 
 
         $consulta = $this->conn->prepare($query);
-        $consulta->execute( array_merge($values, $whereValues) );
-
-        $consulta->debugDumpParams();
-
-        if($consulta->errorCode()) {
+        if(!$consulta->execute( array_merge($values, $whereValues) )) {
 			return false;
 		}
 		return $this->conn->rowCount();
@@ -160,9 +147,8 @@ class Persistencia {
 	    $query = "DELETE FROM {$tabela} WHERE {$where}";
 
         $consulta = $this->conn->prepare($query);
-        $consulta->execute( $whereValues );
 
-        if($consulta->errorCode()) {
+        if(!$consulta->execute( $whereValues )) {
 			return false;
 		}
 		return $this->conn->rowCount();
