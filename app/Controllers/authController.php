@@ -7,7 +7,7 @@ class authController extends Controller {
         if ($user) {
             $_SESSION['email'] = $this->getPost('email');
             $_SESSION['senha'] = $this->getPost('senha');
-            $this->redirect("./home");
+            $this->redirect("home");
         }
         else {
             throw new Exception("Usuário ou senha inválidos");
@@ -46,6 +46,11 @@ class authController extends Controller {
 
 	public function index() {
 
+	    $usuarios = new UsuariosTable();
+        if($usuarios->getBySession()) {
+            $this->redirect('home');
+        }
+
         $erro = ['login' => 'Mensagem de erro login (tmp)', 'registro' => 'Mensagem de erro registro (tmp)'];
 	    if($this->isPost()) {
 	        if($this->getPost('action') == "login") {
@@ -68,7 +73,7 @@ class authController extends Controller {
 
     public function logout() {
         session_destroy();
-        $this->redirect("./home");
+        $this->redirect("home");
     }
 
     public function conta() {

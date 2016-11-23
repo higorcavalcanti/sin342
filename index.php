@@ -32,7 +32,7 @@ class IndexRouter {
 		self::$_action = ($route[1] != null) ? $route[1] : 'index'; //Segundo parametro da rota
         self::$_params = array_slice($route, 2, -1); //O resto apartir do 2 (0: controller, 1: action)
 
-        require_once("app/Controller.php");
+        require_once("app/Controllers/Controller.php");
         require_once("app/Persistencia.php");
 	}
 	

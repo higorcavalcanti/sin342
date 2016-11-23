@@ -16,6 +16,11 @@ class Controller {
         $this->_page = new Page();
     }
 
+    public function index() {
+        $this->redirect('./index');
+    }
+
+
     public function isPost() {
         return $_SERVER['REQUEST_METHOD'] === 'POST';
     }
@@ -24,6 +29,7 @@ class Controller {
     }
 
     public function redirect($url) {
+        $url = __dir().$url;
         header("Location: {$url}");
         die();
     }
