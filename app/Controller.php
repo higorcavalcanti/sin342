@@ -15,4 +15,8 @@ class Controller {
     public function __construct() {
         $this->_page = new Page();
     }
+
+    public function isPost() {
+        return $_SERVER['REQUEST_METHOD'] === 'POST';
+    }
 }

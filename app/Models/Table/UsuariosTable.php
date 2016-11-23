@@ -21,8 +21,15 @@ class UsuariosTable extends Table {
         $this->setObject($user);
     }
 
+    public function getByLogin($user, $pass) {
+        return parent::get(null, "email = ? AND senha = ?", [$user, $pass], null);
+    }
 
     public function getBySession() {
-        return parent::get(null, "email = ? AND senha = ?", ['admin@admin.com', 'admin'], null);
+
+        $email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
+        $senha = isset($_SESSION['senha']) ? $_SESSION['senha'] : null;
+
+        return $this->getByLogin($email, $senha);
     }
 }
