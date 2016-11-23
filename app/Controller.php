@@ -19,4 +19,12 @@ class Controller {
     public function isPost() {
         return $_SERVER['REQUEST_METHOD'] === 'POST';
     }
+    public function getPost($postValue) {
+        return isset($_POST[$postValue]) ? $_POST[$postValue] : null;
+    }
+
+    public function redirect($url) {
+        header("Location: {$url}");
+        die();
+    }
 }

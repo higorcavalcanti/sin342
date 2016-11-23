@@ -20,12 +20,20 @@ class Page {
 		$this->load("footer");
 	}
 
+	private function parseVars($vars) {
+	    foreach($vars as $i => $v) {
+	        $this->$i = $v;
+        }
+    }
+
     /**
      * Carrega um arquivo de VIEW para mostrar ao usuário
      * @param $file arquivo a ser carregado
      */
-	public function load($file) {
+	public function load($file, $vars = []) {
 	    $file = "app/Views/{$file}.php";
+
+        $this->parseVars($vars);
 
         if(file_exists($file)) require_once($file);
 	}
@@ -34,9 +42,9 @@ class Page {
      * Carrega um arquivo de view para mostrar ao usuário e adiciona o cabeçalho/rodapé
      * @param $file Arquivo a ser carregado
      */
-	public function view($file) {
+	public function view($file, $vars = []) {
 		$this->header();
-		$this->load($file);
+		$this->load($file, $vars);
 		$this->footer();
 	}
 }

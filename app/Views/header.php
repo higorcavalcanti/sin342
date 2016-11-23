@@ -42,8 +42,9 @@
         <li><a href="carrinho">Meu Carrinho</a></li>
         <?php if($this->usuario): ?>
             <li><a href="auth/conta">Minha Conta</a></li>
+            <li><a href="auth/logout">Logout</a></li>
         <?php else: ?>
-            <li><a href="auth/login">Entrar/Cadastrar</a></li>
+            <li><a href="auth">Entrar/Cadastrar</a></li>
         <?php endif; ?>
     </ul>
 </nav>
