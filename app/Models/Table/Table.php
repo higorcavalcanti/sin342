@@ -52,7 +52,8 @@ abstract class Table {
      * @return array|mixed Lista de objetos
      */
     public function getAll(){
-        return $this->parse( Persistencia::instancia()->select($this->table, null, null, null, null) );
+        $result = $this->parse( Persistencia::instancia()->select($this->table, null, null, null, null) );
+        return is_array($result) ? $result : [$result];
     }
 
     /**

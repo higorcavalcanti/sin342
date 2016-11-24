@@ -4,6 +4,7 @@ class Livro extends Model {
     protected $id;
     protected $titulo;
     protected $autor;
+    protected $preco;
     protected $categoria_id;
     protected $editora_id;
     protected $image_id;
@@ -103,6 +104,22 @@ class Livro extends Model {
     public function setAutor($autor)
     {
         $this->autor = $autor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPreco()
+    {
+        return $this->preco;
+    }
+
+    /**
+     * @param mixed $preco
+     */
+    public function setPreco($preco)
+    {
+        $this->preco = $preco;
     }
 
     /**

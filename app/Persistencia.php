@@ -44,6 +44,10 @@ class Persistencia {
         return $pdo;
 	}
 
+	public function getConn() {
+	    return $this->conn;
+    }
+
     /**
      * Obtem uma instancia da persistencia
      * @return Persistencia
@@ -136,7 +140,7 @@ class Persistencia {
         if(!$consulta->execute( array_merge($values, $whereValues) )) {
 			return false;
 		}
-		return $this->conn->rowCount();
+		return $consulta->rowCount();
 	}
 
     /**
@@ -154,6 +158,6 @@ class Persistencia {
         if(!$consulta->execute( $whereValues )) {
 			return false;
 		}
-		return $this->conn->rowCount();
+		return $consulta->rowCount();
 	}
 }
