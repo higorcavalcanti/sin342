@@ -45,4 +45,17 @@ class LivrosTable extends Table {
         return parent::get(null,"editora_id=?",[$editora_id],null);
     }
 
+
+    public function findByTitulo($titulo) {
+        $tituloLike = "%{$titulo}%";
+        $order = "CASE
+					WHEN titulo LIKE '{$titulo}%' THEN 1
+					WHEN titulo LIKE '%{$titulo}' THEN 3
+					ELSE 2
+				  END";
+
+        $livros = parent::get(null,"titulo LIKE ?", [$tituloLike], $order);
+        return is_array($livros) ? $livros : [$livros];
+    }
+
 }

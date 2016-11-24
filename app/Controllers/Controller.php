@@ -27,6 +27,13 @@ class Controller {
     public function getPost($postValue) {
         return isset($_POST[$postValue]) ? $_POST[$postValue] : null;
     }
+    public function getParam( $param ) {
+        $param += 2; //Pra começar apartir da action e não do controller
+        $get = ( isset( $_GET['key'] ) ? explode( '/', $_GET['key'] ) : array() );
+        if( array_key_exists( $param, $get ) )
+            return $get[$param];
+        else return false;
+    }
 
     public function redirect($url) {
         $url = __dir().$url;
