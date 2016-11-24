@@ -1,14 +1,16 @@
-<h1>Descrição do livro</h1>
+<div id="conteudo">
+    <h1><?= $this->livro->getTitulo(); ?></h1>
 
-<img src="image/view/<?= $this->livro->getImageId() ?>"/>
+    <img src="image/view/<?= $this->livro->getImageId() ?>"/>
 
-<br>
+    <br>
 
-Titulo: <?= $this->livro->getTitulo(); ?> <br>
-Autor: <?= $this->livro->getAutor(); ?> <br>
-Categoria: <?= $this->livro->getCategoria()->getNome(); ?> <br>
-Editora: <?= $this->livro->getEditora()->getNome(); ?> <br>
+    Titulo: <?= $this->livro->getTitulo(); ?> <br>
+    Autor: <?= $this->livro->getAutor(); ?> <br>
+    Categoria: <?= $this->livro->getCategoria()->getNome(); ?> <br>
+    Editora: <?= $this->livro->getEditora()->getNome(); ?> <br>
 
-<br><br><br>
+    <br><br><br>
 
-<a href="carrinho/add/<?= $this->livro->getId();?>"> [BOTAO: Adicionar ao carrinho] </a>
+    <a href="carrinho/add/<?= $this->livro->getId();?>"> [BOTAO: Adicionar ao carrinho] </a>
+</div>
