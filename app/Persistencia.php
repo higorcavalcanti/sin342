@@ -63,10 +63,10 @@ class Persistencia {
      * @param $orderby string Condição de ordenação
      * @return array Array contendo os dados
      */
-	public function select($tabela, $campos=null, $where=null, $whereValues=null, $orderby=null) {
+	public function select($tabela, $campos=null, $where=null, $whereValues=null, $orderby=null, $limit=null) {
 
 	    $sql = "SELECT ";
-		if($campos != null) $camposSQL = implode(",", $this->conn->real_escape_string($campos) );
+		if($campos != null) $camposSQL = implode(",", $campos );
 		else $camposSQL = "*";
 
         if($where == null) $where = '';
@@ -75,7 +75,10 @@ class Persistencia {
         $orderbySQL = '';
         if($orderby != null ) $orderbySQL = "ORDER BY {$orderby}";
 
-        $query = "SELECT {$camposSQL} FROM {$tabela} {$where} {$orderbySQL}";
+        $limitSQL = '';
+        if($limit != null ) $limitSQL = "LIMIT {$limit}";
+
+        $query = "SELECT {$camposSQL} FROM {$tabela} {$where} {$orderbySQL} {$limitSQL}";
 
         $consulta = $this->conn->prepare($query);
 

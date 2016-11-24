@@ -5,6 +5,7 @@ class Livro extends Model {
     protected $titulo;
     protected $autor;
     protected $categoria_id;
+    protected $editora_id;
 
     public function __construct($obj = array()) {
         $this->setAll($obj);
@@ -18,6 +19,16 @@ class Livro extends Model {
         $c = new CategoriasTable();
         return $c->getById( $this->getCategoriaId() );
     }
+
+    /**
+     * Retorna a editora (Objeto) do livro atual
+     * @return array|mixed Editora
+     */
+    public function getEditora() {
+        $e = new EditorasTable();
+        return $e->getById( $this->getEditoraId() );
+    }
+
 
 
     /**
@@ -81,6 +92,23 @@ class Livro extends Model {
     {
         $this->categoria_id = $categoria_id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEditoraId()
+    {
+        return $this->editora_id;
+    }
+
+    /**
+     * @param mixed $editora_id
+     */
+    public function setEditoraId($editora_id)
+    {
+        $this->editora_id = $editora_id;
+    }
+
 
 
 }

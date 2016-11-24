@@ -1,5 +1,6 @@
-Livros view
+<h1>Descrição do livro</h1>
 
-<pre>
-<?php var_dump($this->livro); ?>
-</pre>
+Titulo: <?= $this->livro->getTitulo(); ?> <br>
+Autor: <?= $this->livro->getAutor(); ?> <br>
+Categoria: <?= $this->livro->getCategoria()->getNome(); ?> <br>
+Editora: <?= $this->livro->getEditora()->getNome(); ?> <br>

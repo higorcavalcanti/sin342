@@ -12,6 +12,16 @@ class Usuario extends Model {
     }
 
     /**
+     * Obtem uma lista de compras do usuário
+     * @return array|mixed Lista de compras
+     */
+    public function getCompras() {
+        $l = new VendasTable();
+        return $l->getByUsuario( $this->getId() );
+    }
+
+
+    /**
      * @return mixed
      */
     public function getId()

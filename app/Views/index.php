@@ -1,15 +1,16 @@
 <h1>Conheça os livros mais vendidos</h1>
 <div id="produtos">
-    <ul><?php for($i=0; $i < 12; $i++): ?>
-
+    <ul><?php foreach($this->livros as $livro): ?>
         <li>
             <div class="boxProduto">
                 <div class="image">
-                    <img src="public/img/foto.jpg">
+                    <a href="livros/view/<?=$livro->getId();?>">
+                        <img src="public/img/foto.jpg">
+                    </a>
                 </div>
-                <div> Titulo</div>
-                <div> Subtitulo</div>
+                <div> <?= $livro->getTitulo(); ?></div>
+                <div> <?= $livro->getAutor(); ?> </div>
             </div>
         </li>
-    <?php endfor; ?></ul>
+    <?php endforeach; ?></ul>
 </div>

@@ -58,8 +58,8 @@ abstract class Table {
     /**
      * Apenas chama o metodo SELECT e realiza o PARSE
      */
-    public function get($campos, $where, $whereValues, $orderby) {
-        return $this->parse( $this->select($campos, $where, $whereValues, $orderby) );
+    public function get($campos, $where, $whereValues, $orderby=null, $limit=null) {
+        return $this->parse( $this->select($campos, $where, $whereValues, $orderby, $limit) );
     }
 
     /**
@@ -69,8 +69,8 @@ abstract class Table {
      * @param $orderby Condição de ordenação dos dados
      * @return array Array contendo os objetos em questão
      */
-    public function select($campos, $where, $whereValues, $orderby) {
-        return Persistencia::instancia()->select($this->table, $campos, $where, $whereValues, $orderby);
+    public function select($campos, $where, $whereValues, $orderby=null, $limit=null) {
+        return Persistencia::instancia()->select($this->table, $campos, $where, $whereValues, $orderby, $limit);
     }
 
     /**

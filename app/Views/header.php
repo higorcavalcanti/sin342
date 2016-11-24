@@ -37,9 +37,8 @@
 <nav>
     <ul class="menu">
         <li><a href="./"> Home </a></li>
-        <li><a href="vendidos">Mais Vendidos</a></li>
-        <li><a href="atendimento">Atendimento</a></li>
         <li><a href="carrinho">Meu Carrinho</a></li>
+        <li><a href="atendimento">Atendimento</a></li>
         <?php if($this->usuario): ?>
             <li><a href="auth/conta">Minha Conta</a></li>
             <li><a href="auth/logout">Logout</a></li>
