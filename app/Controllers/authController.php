@@ -51,7 +51,7 @@ class authController extends Controller {
             $this->redirect('home');
         }
 
-        $erro = ['login' => 'Mensagem de erro login (tmp)', 'registro' => 'Mensagem de erro registro (tmp)'];
+        $erro = ['login' => '', 'registro' => ''];
 	    if($this->isPost()) {
 	        if($this->getPost('action') == "login") {
                 try {
