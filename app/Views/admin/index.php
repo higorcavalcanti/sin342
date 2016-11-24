@@ -1,1 +1,1 @@
-<h2>Selecione a opção desejada no menu lateral.</h2>
+<h3>Selecione a opção desejada no menu lateral.</h3>

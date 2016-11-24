@@ -219,6 +219,16 @@ footer .conteudoFooter .textoFooter {
 
 
 /*
+	Carrinho
+*/
+.vazioCarrinho{
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 15%;
+}
+
+/*
 	Administrador
 */
 #admin {
