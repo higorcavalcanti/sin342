@@ -198,3 +198,50 @@ footer .conteudoFooter .textoFooter {
 	font-style: inherit;
 	margin: 4px;
 }
+
+
+
+/*
+	Administrador
+*/
+#admin {
+	width: 100%;
+	min-height: 300px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+#admin #admin-lateral{
+	float: left;
+	margin: 0 5px 0 10px;
+	width: 20%;
+	min-height: 300px;
+}
+
+#admin #admin-conteudo{
+	float: left;
+	margin: 0 5px 0 10px;
+	width: 76%;
+	min-height: 300px;
+}
+
+#admin #admin-lateral ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#admin #admin-lateral ul li{
+	display: list-item;
+}
+
+#admin #admin-lateral ul li a {
+	float: left;
+	margin: 0 0 15px;
+	padding: 5px 0 5px 5px;
+	width: 150px;
+	border-left: 2px #e9353d solid;
+}
+
+#admin #admin-lateral ul li a:hover {
+	border-left: 8px #e9353d solid;
+}

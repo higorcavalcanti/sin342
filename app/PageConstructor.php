@@ -48,4 +48,13 @@ class Page {
 		$this->load($file, $vars);
 		$this->footer();
 	}
+
+
+	public function adminView($file, $vars = []) {
+	    $this->header();
+        $this->load("admin/admin1");
+        $this->load($file, $vars);
+        $this->load("admin/admin2");
+        $this->footer();
+    }
 }
