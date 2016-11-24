@@ -5,7 +5,7 @@
             <div class="boxProduto">
                 <div class="image">
                     <a href="livros/view/<?=$livro->getId();?>">
-                        <img src="public/img/foto.jpg">
+                        <img src="image/view/<?= $livro->getImage()->getId(); ?>">
                     </a>
                 </div>
                 <div> <?= $livro->getTitulo(); ?></div>

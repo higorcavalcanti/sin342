@@ -6,6 +6,7 @@ class Livro extends Model {
     protected $autor;
     protected $categoria_id;
     protected $editora_id;
+    protected $image_id;
 
     public function __construct($obj = array()) {
         $this->setAll($obj);
@@ -27,6 +28,15 @@ class Livro extends Model {
     public function getEditora() {
         $e = new EditorasTable();
         return $e->getById( $this->getEditoraId() );
+    }
+
+    /**
+     * Retorna a imagem (Objeto) do livro atual
+     * @return array|mixed Image
+     */
+    public function getImage() {
+        $i = new ImagesTable();
+        return $i->getById( $this->getImageId() );
     }
 
 
@@ -109,6 +119,20 @@ class Livro extends Model {
         $this->editora_id = $editora_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImageId()
+    {
+        return $this->image_id;
+    }
 
+    /**
+     * @param mixed $image_id
+     */
+    public function setImageId($image_id)
+    {
+        $this->image_id = $image_id;
+    }
 
 }
