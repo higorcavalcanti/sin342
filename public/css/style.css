@@ -70,6 +70,8 @@ header {
 	text-align: right;
 }
 
+
+
 /*Menu */
 nav {
 	width: 1024px;
@@ -190,6 +192,15 @@ footer .conteudoFooter .textoFooter {
 	border: 1px solid #333333;;
 }
 
+.carrinhoInput {
+	height: 40px;
+	width: 200px;
+	padding: 10px 20px 10px;
+	background-color: #e9353d;
+	color: #FFF;
+	border: none;
+}
+
 /*
 	LOGIN / REGISTRO
 */
@@ -223,7 +234,6 @@ footer .conteudoFooter .textoFooter {
 	background-color: #00448E;
 	color: #FFF;
 	border: none;
-
 }
 
 .espacoEntre{

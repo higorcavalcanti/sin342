@@ -9,10 +9,10 @@
             <div id="carrinhoTabelas">
                 <table style="width: 900px; margin: auto; text-align: center" >
                     <thead>
-                        <th style="width: 30%">Imagem</th>
-                        <th style="width: 30%">Produto</th>
-                        <th style="width: 30%">Quantidade</th>
-                        <th style="width: 30%">Remover</th>
+                        <th width="30%">Imagem</th>
+                        <th width="30%">Produto</th>
+                        <th width="30%">Quantidade</th>
+                        <th width="30%">Remover</th>
                     </thead>
                     <tbody>
 
@@ -22,10 +22,8 @@
                     <td><hr></td>
                     <td><hr></td>
 
-
                     <?php foreach($this->carrinho as $item): ?>
                         <tr>
-
                             <td><?=$item['livro']->imageLink();?></td>
                             <td><?= $item['livro']->getTitulo(); ?></td>
                             <td><?= $item['quantidade']?></td>
@@ -35,9 +33,20 @@
                     </tbody>
                 </table>
             </div>
-
         <br>
-        [Botão: Continuar compra]
+
+    <table style="width: 900px; margin: auto; text-align: center" >
+
+        <td width="80%"></td>
+        <td width="20%">
+            <button class="carrinhoInput" type="button" value="teste">Finalizar</button>
+        </td>
+
+    </table>
+</div>
+
+
+
     <?php endif;?>
 
 </div>

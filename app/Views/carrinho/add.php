@@ -1,3 +1,8 @@
-<h1>Carrinho</h1>
-Produto adicionado com sucesso!
-<?= $this->livro->getTitulo(); ?>
+<div id="conteudo">
+    <h1>Carrinho</h1>
+    <div class="vazioCarrinho">
+        Produto adicionado com sucesso!<br>
+        <b><?= $this->livro->getTitulo(); ?></b>
+    </div>
+
+</div>
