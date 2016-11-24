@@ -35,7 +35,8 @@ class Page {
 
         $this->parseVars($vars);
 
-        if(file_exists($file)) require_once($file);
+        if(file_exists($file))
+            require_once($file);
 	}
 
     /**

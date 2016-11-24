@@ -41,6 +41,9 @@
         <li><a href="atendimento">Atendimento</a></li>
         <?php if($this->usuario): ?>
             <li><a href="auth/conta">Minha Conta</a></li>
+            <?php if($this->usuario->getRole() == "admin"): ?>
+                <li><a href="admin">Admin</a></li>
+            <?php endif; ?>
             <li><a href="auth/logout">Logout</a></li>
         <?php else: ?>
             <li><a href="auth">Entrar/Cadastrar</a></li>

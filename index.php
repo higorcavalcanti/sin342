@@ -46,9 +46,13 @@ class IndexRouter {
             require_once($file);
         }
         else { //Se existe, adiciona o controller de error e chama a action e404 (Erro 404)
-			self::$_control = "erro";
+			/*
+            self::$_control = "erro";
             self::$_action = "e404";
 			require_once("app/Controllers/erroController.php");
+			*/
+			header("Location: " . __dir() . "erro/e404");
+            exit();
 		}
 		$controllerName = self::$_control . "Controller";
 		$controller = new $controllerName(self::$_params);

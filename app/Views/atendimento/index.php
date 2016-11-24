@@ -1,1 +1,1 @@
-Atendimento Index
+<h1>Atendimento Index</h1>
