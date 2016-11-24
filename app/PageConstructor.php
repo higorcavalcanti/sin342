@@ -28,7 +28,7 @@ class Page {
 
     /**
      * Carrega um arquivo de VIEW para mostrar ao usuário
-     * @param $file arquivo a ser carregado
+     * @param $file string arquivo a ser carregado
      */
 	public function load($file, $vars = []) {
 	    $file = "app/Views/{$file}.php";
@@ -40,7 +40,7 @@ class Page {
 
     /**
      * Carrega um arquivo de view para mostrar ao usuário e adiciona o cabeçalho/rodapé
-     * @param $file Arquivo a ser carregado
+     * @param $file string Arquivo a ser carregado
      */
 	public function view($file, $vars = []) {
 		$this->header();

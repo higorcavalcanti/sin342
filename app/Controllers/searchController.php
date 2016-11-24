@@ -7,25 +7,35 @@ class searchController extends Controller {
     }
 
     public function livro() {
-        $this->search("livros");
+
+        $livrosTable = new LivrosTable();
+        $pesquisa = urldecode($this->getParam(0));
+        $livros = $livrosTable->findByTitulo( $pesquisa );
+
+        $this->search("livros", $pesquisa, $livros);
     }
 
     public function autor() {
-        $this->search("autor");
+
+        $livrosTable = new LivrosTable();
+        $pesquisa = urldecode($this->getParam(0));
+        $livros = $livrosTable->findByAutor( $pesquisa );
+
+        $this->search("autor", $pesquisa, $livros);
     }
 
     public function editora() {
-        $this->search("editora");
-    }
-
-    private function search($title) {
-
-        $tituloPesquisa = urldecode($this->getParam(0));
 
         $livrosTable = new LivrosTable();
-        $livros = $livrosTable->findByTitulo( $tituloPesquisa );
+        $pesquisa = urldecode($this->getParam(0));
+        $livros = $livrosTable->findByEditora( $pesquisa );
 
-        $title = "Mostrando livros que correspondem à pesquisa por {$title}: '{$tituloPesquisa}'";
+        $this->search("editora", $pesquisa, $livros);
+    }
+
+    private function search($tipo, $pesquisa, $livros) {
+
+        $title = "Mostrando livros que correspondem à pesquisa por {$tipo}: <i>'{$pesquisa}'</i>";
         $this->_page->view('search/index', compact('livros', 'title'));
     }
 }

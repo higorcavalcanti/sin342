@@ -58,4 +58,29 @@ class LivrosTable extends Table {
         return is_array($livros) ? $livros : [$livros];
     }
 
+    public function findByAutor($autor) {
+        $autorLike = "%{$autor}%";
+        $order = "CASE
+					WHEN autor LIKE '{$autor}%' THEN 1
+					WHEN autor LIKE '%{$autor}' THEN 3
+					ELSE 2
+				  END";
+
+        $livros = parent::get(null,"autor LIKE ?", [$autorLike], $order);
+        return is_array($livros) ? $livros : [$livros];
+    }
+
+    public function findByEditora($editora) {
+        $editorasTable = new EditorasTable();
+        $editoras = $editorasTable->findByNome($editora);
+        $ids = [];
+        foreach ($editoras as $e) {
+            $ids[] = $e->getId();
+        }
+
+        $where = str_repeat('?,', count($ids) - 1) . '?';
+        $livros = parent::get(null, "editora_id IN ({$where})", $ids);
+        return is_array($livros) ? $livros : [$livros];
+    }
+
 }

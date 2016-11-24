@@ -21,4 +21,17 @@ class EditorasTable extends Table {
     public function setEditora($editora) {
         $this->setObject($editora);
     }
+
+
+    public function findByNome($nome) {
+        $nomeLike = "%{$nome}%";
+        $order = "CASE
+					WHEN nome LIKE '{$nome}%' THEN 1
+					WHEN nome LIKE '%{$nome}' THEN 3
+					ELSE 2
+				  END";
+
+        $editoras = parent::get(null,"nome LIKE ?", [$nomeLike], $order);
+        return is_array($editoras) ? $editoras : [$editoras];
+    }
 }
