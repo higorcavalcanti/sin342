@@ -5,6 +5,10 @@ html, body {
 	padding: 0;
 }
 
+h1{
+	color: #333333;
+}
+
 body {
 	background-color: #F0F4F5;
 	font-family: Arial, Helvetica, sans-serif;
@@ -199,6 +203,17 @@ footer .conteudoFooter .textoFooter {
 	margin: 4px;
 }
 
+/*
+	Atendimento
+*/
+
+.atendimento{
+	margin: 0 auto;
+	width: 900px;
+	font-size: 12px;
+	color: #333333;
+	text-align: justify;
+}
 
 
 /*
