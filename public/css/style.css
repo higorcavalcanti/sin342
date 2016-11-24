@@ -177,15 +177,17 @@ footer .conteudoFooter .textoFooter {
 	font-size: 14px;
 }
 .auth input {
-	width: 100%;
+	width: 400px;
 	height: 30px;
 	margin-bottom: 10px;
 	font-size: 13px;
+	padding: 2px 10px;
 }
 
 
 .auth input[type="submit"] {
 	height: 40px;
+	width: 424px;
 	padding: 10px 20px 10px;
 	background-color: #00448E;
 	color: #FFF;
@@ -194,7 +196,7 @@ footer .conteudoFooter .textoFooter {
 }
 
 .espacoEntre{
-	height: 62px;
+	height: 65px;
 }
 
 .alertError{
