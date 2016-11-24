@@ -2,7 +2,6 @@
 class Categoria extends Model {
 
     protected $id;
-    protected $categoriaPai_id;
     protected $nome;
 
     public function __construct($obj = array()) {
@@ -32,22 +31,6 @@ class Categoria extends Model {
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCategoriaPaiId()
-    {
-        return $this->categoriaPai_id;
-    }
-
-    /**
-     * @param mixed $categoriaPai_id
-     */
-    public function setCategoriaPaiId($categoriaPai_id)
-    {
-        $this->categoriaPai_id = $categoriaPai_id;
     }
 
     /**

@@ -21,7 +21,7 @@ function __autoload($class) {
 
 class IndexRouter {
 
-	public static $_action, $_control, $_params;
+	public static $_action, $_control;
 
 	public function __construct(){
 
@@ -30,7 +30,6 @@ class IndexRouter {
 
 		self::$_control = $route[0]; //Primeiro parametro da rota
 		self::$_action = ($route[1] != null) ? $route[1] : 'index'; //Segundo parametro da rota
-        self::$_params = array_slice($route, 2, -1); //O resto apartir do 2 (0: controller, 1: action)
 
         require_once("app/Controllers/Controller.php");
         require_once("app/Persistencia.php");
@@ -46,16 +45,11 @@ class IndexRouter {
             require_once($file);
         }
         else { //Se existe, adiciona o controller de error e chama a action e404 (Erro 404)
-			/*
-            self::$_control = "erro";
-            self::$_action = "e404";
-			require_once("app/Controllers/erroController.php");
-			*/
 			header("Location: " . __dir() . "erro/e404");
             exit();
 		}
 		$controllerName = self::$_control . "Controller";
-		$controller = new $controllerName(self::$_params);
+		$controller = new $controllerName();
 
         $acao = self::$_action;
 		if(method_exists($controller, $acao))
