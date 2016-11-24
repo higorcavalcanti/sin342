@@ -18,7 +18,7 @@ p {
 }
 
 a:link, a:visited  {
-	color: #fff;
+	color: #666;
 	text-decoration: none;
 }
 
@@ -91,6 +91,7 @@ ul.menu li {
 }
 
 nav ul li a:link, nav ul li a:visited {
+	color: #ffffff;
 	font-size: 14px;
 	display: block;
 	height: 36px;
