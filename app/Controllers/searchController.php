@@ -1,5 +1,5 @@
 <?php
-class erroController extends Controller{
+class searchController extends Controller{
 
 	public function index() {
 	    $this->_page->view("erro/index");
