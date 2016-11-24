@@ -10,7 +10,7 @@
     <tbody>
         <?php foreach($this->carrinho as $item): ?>
             <tr>
-                <td><img src="image/view/<?=$item['livro']->getImage()->getId()?>"</td>
+                <td><?=$item['livro']->imageLink();?></td>
                 <td><?= $item['livro']->getTitulo(); ?></td>
                 <td><?= $item['quantidade']?></td>
                 <td> <a href="carrinho/remove/<?=$item['livro']->getId()?>"> Remover </a></td>
