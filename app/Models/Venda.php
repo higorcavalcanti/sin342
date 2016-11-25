@@ -33,7 +33,7 @@ class Venda extends Model {
         foreach ($this->getVendaItens() as $item) {
             $valor += ($item->getQuantidade() * $item->getLivro()->getPreco());
         }
-        return $valor;
+        return number_format($valor, 2, ',', '.');
     }
 
     /**

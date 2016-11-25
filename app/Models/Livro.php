@@ -58,6 +58,14 @@ class Livro extends Model {
     }
 
 
+    /**
+     * Retorna o preço do livro formatado em R$
+     * @return string
+     */
+    public function getPrecoFormatado() {
+        return "R$ " . number_format($this->preco, 2, ',', '.');
+    }
+
 
     /**
      * @return mixed

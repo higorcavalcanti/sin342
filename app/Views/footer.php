@@ -1,5 +1,5 @@
 ﻿
-    <p>&nbsp;</p>
+    <div style="clear:both;"></div>
 </section>
 
 <footer>

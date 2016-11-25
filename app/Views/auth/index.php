@@ -1,43 +1,42 @@
 <h1>Login</h1>
-<div id="conteudo">
-    <div id="auth">
-        <div class="auth" id="login">
-            <h2 class="center">Já tem conta?</h2>
 
-            <form method="post">
-                <input type="hidden" name="action" value="login"><br>
+<div id="auth">
+    <div class="auth" id="login">
+        <h2 class="center">Já tem conta?</h2>
 
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" placeholder="Digite seu e-mail" required><br>
+        <form method="post">
+            <input type="hidden" name="action" value="login"><br>
 
-                <label for="senha">Senha:</label><br>
-                <input type="password" name="senha" placeholder="Digite sua senha" required>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" placeholder="Digite seu e-mail" required><br>
 
-                <div class="alertError"><?php echo $this->erro['login'];?></div>
-                <div class="espacoEntre"></div>
+            <label for="senha">Senha:</label><br>
+            <input type="password" name="senha" placeholder="Digite sua senha" required>
 
-                <input type="submit" value="Logar">
-            </form>
-        </div>
+            <div class="alertError"><?php echo $this->erro['login']; ?></div>
+            <div class="espacoEntre"></div>
 
-        <div class="auth" id="registro">
-            <h2 class="center">Ainda não tem conta?</h2>
-            <form method="post">
-                <input type="hidden" name="action" value="registro"><br>
+            <input type="submit" value="Logar">
+        </form>
+    </div>
 
-                <label for="email">Nome completo:</label><br>
-                <input type="text" name="nome" placeholder="Digite seu nome completo"><br>
+    <div class="auth" id="registro">
+        <h2 class="center">Ainda não tem conta?</h2>
+        <form method="post">
+            <input type="hidden" name="action" value="registro"><br>
 
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" placeholder="Digite seu e-mail"><br>
+            <label for="email">Nome completo:</label><br>
+            <input type="text" name="nome" placeholder="Digite seu nome completo"><br>
 
-                <label for="senha">Senha:</label><br>
-                <input type="password" name="senha" placeholder="Digite sua senha"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" placeholder="Digite seu e-mail"><br>
 
-                <div class="alertError"><?php echo $this->erro['registro'];?></div>
+            <label for="senha">Senha:</label><br>
+            <input type="password" name="senha" placeholder="Digite sua senha"><br>
 
-                <input type="submit" value="Criar Conta">
-            </form>
-        </div>
+            <div class="alertError"><?php echo $this->erro['registro']; ?></div>
+
+            <input type="submit" value="Criar Conta">
+        </form>
     </div>
 </div>
