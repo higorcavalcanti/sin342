@@ -246,6 +246,59 @@ footer .conteudoFooter .textoFooter {
 	border: none;
 }
 
+
+
+/*Descricao Produto*/
+#blocoTotal{
+	width: 1000px;
+	margin: auto;
+	float: left;
+	padding: 45px 0 0 15px;
+	clear: both;
+	height: auto;
+}
+.boxTitulo{
+	font-size: 20px;
+	color: #333333;
+	padding: 0 0 20px 40px;
+
+}
+.blocoImagem{
+	width: 200px;
+	padding: 10px;
+	float: left;
+	text-align: center;
+}
+
+.blocoConteudo{
+	width: 500px;
+	padding: 10px;
+	float: left;
+	font-family: century_gothicregular;
+	font-size: 13px;
+	text-align: justify;
+}
+.blocoValor{
+	width: 240px;
+	padding: 10px;
+	float: left;
+	text-align: center;
+}
+.blocoPreco{
+	padding: 10px;
+	font-family: century_gothicregular;
+	font-size: 30px;
+	color: #e9353d;
+}
+.blocoButton{
+	width: 150px;
+	height: 40px;
+	background-color: #e9353d;
+	color: white;
+	padding: 10px;
+}
+
+
 /*
 	LOGIN / REGISTRO
 */
