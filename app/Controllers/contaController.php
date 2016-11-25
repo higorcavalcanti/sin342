@@ -17,8 +17,17 @@ class contaController extends Controller {
     public function pedidos() {
 
         $vt = new VendasTable();
-        $pedidos = $vt->getByUsuario( $this->_page->usuario->getId() );
 
-        $this->_page->view('conta/pedidos', compact('pedidos'));
+        $pedido_id = $this->getParam(0);
+
+        if($pedido_id) {
+            $pedido = $vt->getById($pedido_id);
+            $this->_page->view('conta/pedidos/detalhes', compact('pedido'));
+        }
+        else {
+            $pedidos = $vt->getByUsuario($this->_page->usuario->getId());
+
+            $this->_page->view('conta/pedidos/view', compact('pedidos'));
+        }
     }
 }
