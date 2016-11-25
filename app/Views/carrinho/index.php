@@ -30,9 +30,9 @@
                 <tr>
                     <td><?= $item['livro']->imageLink(true); ?></td>
                     <td><?= $item['livro']->getTitulo(); ?></td>
+                    <td><?= $item['quantidade'] ?></td>
                     <td> R$<?= $item['livro']->getPreco(); ?></td>
                     <td> R$<?= $item['livro']->getPreco() * $item['quantidade']; ?></td>
-                    <td><?= $item['quantidade'] ?></td>
                     <td><a href="carrinho/remove/<?= $item['livro']->getId() ?>"> Remover </a></td>
                 </tr>
             <?php endforeach; ?>
