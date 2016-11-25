@@ -44,16 +44,17 @@ class Livro extends Model {
      * Obtem o código HTML para mostrar a capa do livro
      * @return string
      */
-    public function image() {
-        return "<img src='image/view/{$this->getImageId()}'/>";
+    public function image($thumb = false) {
+        $class = $thumb == true ? 'livro-img-thumb' : 'livro-img';
+        return "<img src='image/view/{$this->getImageId()}' class='{$class}'/>";
     }
 
     /**
      * Obtem o código HTML para mostrar a capa do livro com link
      * @return string
      */
-    public function imageLink() {
-        return "<a href='livros/view/{$this->getId()}'>".$this->image()."</a>";
+    public function imageLink($thumb = false) {
+        return "<a href='livros/view/{$this->getId()}'>".$this->image($thumb)."</a>";
     }
 
 

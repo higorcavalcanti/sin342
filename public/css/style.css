@@ -71,6 +71,16 @@ header {
 }
 
 
+.livro-img {
+	max-width: 300px;
+	height: auto;
+}
+.livro-img-thumb {
+	max-width: 150px;
+	height: auto;
+}
+
+
 
 /*Menu */
 nav {

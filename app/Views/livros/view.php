@@ -1,7 +1,7 @@
 <div id="conteudo">
     <h1><?= $this->livro->getTitulo(); ?></h1>
 
-    <img src="image/view/<?= $this->livro->getImageId() ?>"/>
+    <?= $this->livro->image(); ?>
 
     <br>
 
