@@ -35,17 +35,8 @@
             </div>
         <br>
 
-    <table style="width: 900px; margin: auto; text-align: center" >
-
-        <td width="80%"></td>
-        <td width="20%">
-            <button class="carrinhoInput" type="button" value="teste">Finalizar</button>
-        </td>
-
-    </table>
+    <button class="carrinhoInput" type="button" value="teste">Finalizar</button>
 </div>
-
-
 
     <?php endif;?>
 

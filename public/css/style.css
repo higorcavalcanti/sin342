@@ -266,6 +266,7 @@ footer .conteudoFooter .textoFooter {
 	min-height: 300px;
 	margin: 0 auto;
 	padding: 10px 0;
+
 }
 
 #admin #admin-lateral{
@@ -302,3 +303,4 @@ footer .conteudoFooter .textoFooter {
 #admin #admin-lateral ul li a:hover {
 	border-left: 8px #e9353d solid;
 }
+
