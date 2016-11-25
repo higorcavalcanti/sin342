@@ -392,3 +392,15 @@ footer .conteudoFooter .textoFooter {
 	border-left: 8px #e9353d solid;
 }
 
+#admin table {
+	border-spacing: 0;
+}
+#admin table tbody tr {
+	height: 40px;
+}
+#admin table tbody tr:nth-child(even) {
+	background-color: rgba(255, 0, 0, 0.11);
+}
+#admin table tbody tr:nth-child(odd) {
+	background-color: rgba(116, 116, 116, 0.05);
+}
