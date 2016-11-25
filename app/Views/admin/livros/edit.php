@@ -4,6 +4,10 @@
     <input type="text" name="titulo" value="<?= $this->livro->getTitulo(); ?>">
 
     <br>
+    <label for="autor">Preço:</label>
+    <input type="text" name="preco" value="<?= $this->livro->getPreco(); ?>">
+
+    <br>
     <label for="autor">Autor:</label>
     <input type="text" name="autor" value="<?= $this->livro->getAutor(); ?>">
 

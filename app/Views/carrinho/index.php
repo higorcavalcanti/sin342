@@ -13,7 +13,7 @@
             <th>Produto</th>
             <th>Quantidade</th>
             <th>Preço Unitário</th>
-            <th>Preço</th>
+            <th>Preço Total</th>
             <th>Remover</th>
             </thead>
             <tbody>
