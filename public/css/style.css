@@ -41,6 +41,9 @@ header {
 .right {
 	text-align: right;
 }
+.fonteTabelas{
+	font-style: 13px;
+}
 
 #logo {
 	float: left;

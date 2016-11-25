@@ -1,26 +1,26 @@
 <h2>Gerenciar Livros</h2>
-<table>
+<table width="100%" class="fonteTabelas">
     <thead>
-        <th>Id</th>
-        <th>Titulo</th>
-        <th>Autor</th>
-        <th>Editora</th>
-        <th>Categoria</th>
-        <th>Preco</th>
-        <th>Editar</th>
-        <th>Remover</th>
+        <td width="5%"><b>Id</b></td>
+        <td width="30%"><b>Titulo</b></td>
+        <td width="25%"><b>Autor</b></td>
+        <td width="10%"><b>Editora</b></td>
+        <td width="10%"><b>Categoria</b></td>
+        <td width="10%"><b>Preco</b></td>
+        <td width="5%"><b>Editar</b></td>
+        <td width="5%"><b>Remover</b></td>
     </thead>
     <tbody>
         <?php foreach($this->livros as $livro): ?>
             <tr>
-                <td><?= $livro->getId(); ?></td>
-                <td><?= $livro->getTitulo(); ?></td>
-                <td><?= $livro->getAutor(); ?></td>
-                <td><?= $livro->getEditora()->getNome(); ?></td>
-                <td><?= $livro->getCategoria()->getNome(); ?></td>
-                <td>R$<?= $livro->getPreco(); ?></td>
-                <td><a href="admin/livros/edit/<?= $livro->getId(); ?>">Editar</a></td>
-                <td><a href="admin/livros/remove/<?= $livro->getId(); ?>">Remover</a></td>
+                <td width="5%"><?= $livro->getId(); ?></td>
+                <td width="30%"><?= $livro->getTitulo(); ?></td>
+                <td width="25%"><?= $livro->getAutor(); ?></td>
+                <td width="10%"><?= $livro->getEditora()->getNome(); ?></td>
+                <td width="10%"><?= $livro->getCategoria()->getNome(); ?></td>
+                <td width="10%">R$<?= $livro->getPreco(); ?></td>
+                <td width="5%"><a href="admin/livros/edit/<?= $livro->getId(); ?>">Editar</a></td>
+                <td width="5%"><a href="admin/livros/remove/<?= $livro->getId(); ?>">Remover</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
