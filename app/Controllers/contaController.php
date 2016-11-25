@@ -11,7 +11,18 @@ class contaController extends Controller {
     }
 
     public function index() {
-        $this->_page->view('conta/index');
+
+        $ut = new UsuariosTable();
+        $usuario = $this->_page->usuario;
+
+        //Se enviou algo
+        if($this->isPost()) {
+            $usuario->setAll( $_POST );
+
+            $ut->setUsuario( $usuario );
+            $ut->update();
+        }
+        $this->_page->view('conta/index', compact('usuario'));
     }
 
     public function pedidos() {
