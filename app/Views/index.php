@@ -3,7 +3,7 @@
     <ul><?php foreach($this->livros as $livro): ?>
         <li>
             <div class="boxProduto">
-                <div id="image"><?= $livro->imageLink(); ?></div>
+                <div id="image"><?= $livro->imageLink(true); ?></div>
                 <div> <?= $livro->getTitulo(); ?></div>
                 <div> <?= $livro->getAutor(); ?> </div>
             </div>
