@@ -5,6 +5,7 @@ class Livro extends Model {
     protected $titulo;
     protected $autor;
     protected $preco;
+    protected $descricao;
     protected $categoria_id;
     protected $editora_id;
     protected $image_id;
@@ -134,10 +135,28 @@ class Livro extends Model {
     /**
      * @return mixed
      */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * @param mixed $descricao
+     */
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getCategoriaId()
     {
         return $this->categoria_id;
-    }/**
+    }
+
+    /**
      * @param mixed $categoria_id
      */
     public function setCategoriaId($categoria_id)

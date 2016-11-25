@@ -1,6 +1,6 @@
 <h1><?= $this->title ?></h1>
 <div id="produtos">
-    <ul><?php foreach($this->livros as $livro): ?>
+    <ul><?php foreach ($this->livros as $livro): ?>
             <li>
                 <div class="boxProduto">
                     <p id="image"><?= $livro->imageLink(true); ?></p>

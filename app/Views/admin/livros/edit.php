@@ -12,6 +12,10 @@
     <input type="text" name="autor" value="<?= $this->livro->getAutor(); ?>">
 
     <br>
+    <label for="descricao">Descrição:</label><br>
+    <textarea type="text" name="descricao" cols="50" ><?= $this->livro->getDescricao    (); ?></textarea>
+
+    <br>
     <label for="categoria_id">Categoria:</label>
     <select name="categoria_id">
     <?php foreach ($this->categorias as $categoria): ?>
