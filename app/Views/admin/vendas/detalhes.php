@@ -1,23 +1,22 @@
 <h2>Venda Detalhes</h2>
 
-Data: <?= $this->venda->getData() ?>
-<br>
-Usuário: <?= $this->venda->getUsuario()->getNome() ?>
-<br>
-Quantidade de itens: <?= count($this->venda->getVendaItens()) ?>
-<br>
+<b>Data:</b> <?= $this->venda->getData() ?><br>
+<b>Usuário: </b><a href="admin/clientes/<?= $this->venda->getUsuario()->getId() ?>"><?= $this->venda->getUsuario()->getNome() ?> </a><br>
+<b>Quantidade de itens:</b> <?= count($this->venda->getVendaItens()) ?>
+<br><br>
 
-<table>
+<?php if( count($this->venda->getVendaItens()) ): ?>
+<table width="100%" class="fonteTabelas">
     <thead>
         <tr>
-            <th>Image</th>
+            <th width="170px">Image</th>
             <th>Livro</th>
             <th>Autor</th>
             <th>Editora</th>
             <th>Quantidade</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="text-align: center">
         <?php foreach($this->venda->getVendaItens() as $item): ?>
         <tr>
             <td><?= $item->getLivro()->imageLink(true) ?></td>
@@ -29,3 +28,4 @@ Quantidade de itens: <?= count($this->venda->getVendaItens()) ?>
         <?php endforeach; ?>
     </tbody>
 </table>
+<?php endif; ?>

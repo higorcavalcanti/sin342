@@ -30,8 +30,19 @@ class adminController extends Controller {
     }
 
     public function clientes() {
-        $this->_page->adminView('admin/clientes');
-    }
+
+            $ut = new UsuariosTable();
+            $usuario_id = $this->getParam(0);
+
+            if($usuario_id) {
+                $usuario = $ut->getById($usuario_id);
+                $this->_page->adminView('admin/clientes/detalhes', compact('usuario'));
+            }
+            else {
+                $usuarios = $ut->getAll();
+                $this->_page->adminView('admin/clientes/view', compact('usuarios'));
+            }
+        }
 
 
     /*
