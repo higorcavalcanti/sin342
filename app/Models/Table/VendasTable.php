@@ -29,6 +29,7 @@ class VendasTable extends Table {
      * @return array|mixed
      */
     public function getByUsuario($id) {
-        return parent::get(null,"usuario_id=?",[$id],null);
+        $p = parent::get(null,"usuario_id=?",[$id],null);
+        return is_array($p) ? $p : [$p];
     }
 }

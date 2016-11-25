@@ -43,7 +43,7 @@ class carrinhoController extends Controller {
 
     public function finalizar() {
 
-        if(!$this->_page->usuario || $this->_page->usuario->getRole() != "admin") {
+        if(!$this->_page->usuario) {
             $this->redirect("erro/e401");
         }
 

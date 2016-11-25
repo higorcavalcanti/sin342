@@ -40,7 +40,8 @@
         <li><a href="carrinho">Meu Carrinho</a></li>
         <li><a href="atendimento">Atendimento</a></li>
         <?php if($this->usuario): ?>
-            <li><a href="auth/conta">Minha Conta</a></li>
+            <li><a href="conta">Minha Conta</a></li>
+            <li><a href="conta/pedidos">Meus Pedidos</a></li>
             <?php if($this->usuario->getRole() == "admin"): ?>
                 <li><a href="admin">Admin</a></li>
             <?php endif; ?>

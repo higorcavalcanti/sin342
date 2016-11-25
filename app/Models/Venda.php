@@ -28,6 +28,14 @@ class Venda extends Model {
         return is_array($itens) ? $itens : [$itens];
     }
 
+    public function getValor() {
+        $valor = 0;
+        foreach ($this->getVendaItens() as $item) {
+            $valor += ($item->getQuantidade() * $item->getLivro()->getPreco());
+        }
+        return $valor;
+    }
+
     /**
      * @return mixed
      */

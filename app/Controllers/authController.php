@@ -75,8 +75,4 @@ class authController extends Controller {
         session_destroy();
         $this->redirect("home");
     }
-
-    public function conta() {
-        $this->_page->view('auth/conta');
-    }
 }
