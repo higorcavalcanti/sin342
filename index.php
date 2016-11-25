@@ -1,5 +1,5 @@
 <?php
-session_name("SIN-352");
+session_name("SIN-342");
 session_start();
 
 header('Content-type: text/html; charset=UTF-8');
@@ -25,7 +25,7 @@ class IndexRouter {
 
 	public function __construct(){
 
-	    $key = (isset($_GET['key']) ? $_GET['key'] : "home")."/"; //Variavel passada pro GET que contém todos os dados da rota
+	    $key = (isset($_GET['key']) ? $_GET['key'] : "home")."/"; //Variavel passada por GET que contém todos os dados da rota
         $route = explode("/", $key);
 
 		self::$_control = $route[0]; //Primeiro parametro da rota
@@ -44,7 +44,7 @@ class IndexRouter {
 		if(file_exists($file)) {
             require_once($file);
         }
-        else { //Se existe, adiciona o controller de error e chama a action e404 (Erro 404)
+        else { //Se não existe, redireciona para Erro 404
 			header("Location: " . __dir() . "erro/e404");
             exit();
 		}
