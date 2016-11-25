@@ -24,7 +24,8 @@ class Venda extends Model {
      */
     public function getVendaItens() {
         $t = new VendaItensTable();
-        return $t->getByVenda( $this->getId() );
+        $itens = $t->getByVenda( $this->getId() );
+        return is_array($itens) ? $itens : [$itens];
     }
 
     /**
