@@ -40,4 +40,36 @@ class carrinhoController extends Controller {
 
         $this->_page->view('carrinho/remove', compact('livro'));
     }
+
+    public function finalizar() {
+
+        if(!$this->_page->usuario || $this->_page->usuario->getRole() != "admin") {
+            $this->redirect("erro/e401");
+        }
+
+        $vt = new VendasTable();
+        $vit = new VendaItensTable();
+
+        $venda = new Venda();
+        $venda->setData( date('Y-m-d H:i:s') );
+        $venda->setUsuarioId( $this->_page->usuario->getId() );
+
+        $vt->setVenda($venda);
+        $vt->insert();
+
+        $carrinho = isset($_SESSION['carrinho']) ? $_SESSION['carrinho'] : [];
+
+        foreach($carrinho as $id => $qnt) {
+            $item = new VendaItem();
+            $item->setLivroId( $id );
+            $item->setQuantidade( $qnt );
+            $item->setVendaId( $venda->getId() );
+
+            $vit->setVendaItem( $item );
+            $vit->insert();
+        }
+        unset($_SESSION['carrinho']);
+
+        $this->_page->view('carrinho/finalizar');
+    }
 }

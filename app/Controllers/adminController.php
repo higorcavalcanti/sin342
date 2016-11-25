@@ -14,6 +14,16 @@ class adminController extends Controller {
         $this->_page->adminView('admin/index');
     }
 
+    public function vendas() {
+        $vt = new VendasTable();
+        $vendas = $vt->getAll();
+
+        $this->_page->adminView('admin/vendas', compact('vendas'));
+    }
+
+    public function clientes() {
+        $this->_page->adminView('admin/clientes');
+    }
 
 
     /*

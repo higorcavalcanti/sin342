@@ -41,7 +41,9 @@
     </div>
     <br>
     <div class="right" style="padding-right: 40px">
-        <button class="carrinhoInput" type="button" value="teste">Finalizar</button>
+        <a href="carrinho/finalizar">
+            <button class="carrinhoInput" type="button" value="teste">Finalizar</button>
+        </a>
     </div>
 </div>
 

@@ -7,7 +7,7 @@ class VendasTable extends Table {
     }
 
     /**
-     * Obtem a editora que está sendo manipulada
+     * Obtem a venda que está sendo manipulada
      * @return mixed
      */
     public function getVenda() {

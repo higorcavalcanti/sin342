@@ -19,6 +19,15 @@ class Venda extends Model {
     }
 
     /**
+     * Retorna a lista de itens da venda atual
+     * @return Usuario
+     */
+    public function getVendaItens() {
+        $t = new VendaItensTable();
+        return $t->getByVenda( $this->getId() );
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
