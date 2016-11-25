@@ -6,6 +6,7 @@
 <br><br>
 
 <?php if( count($this->usuario->getCompras()) ): ?>
+<h3>Detalhes das compras</h3>
 <table width="100%" class="fonteTabelas">
     <thead>
         <tr>

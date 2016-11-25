@@ -6,6 +6,7 @@
 <br><br>
 
 <?php if( count($this->venda->getVendaItens()) ): ?>
+<h3>Detalhes dos Itens</h3>
 <table width="100%" class="fonteTabelas">
     <thead>
         <tr>
