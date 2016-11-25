@@ -15,10 +15,18 @@ class adminController extends Controller {
     }
 
     public function vendas() {
-        $vt = new VendasTable();
-        $vendas = $vt->getAll();
 
-        $this->_page->adminView('admin/vendas', compact('vendas'));
+        $vt = new VendasTable();
+        $venda_id = $this->getParam(0);
+
+        if($venda_id) {
+            $venda = $vt->getById($venda_id);
+            $this->_page->adminView('admin/vendas/detalhes', compact('venda'));
+        }
+        else {
+            $vendas = $vt->getAll();
+            $this->_page->adminView('admin/vendas/view', compact('vendas'));
+        }
     }
 
     public function clientes() {
