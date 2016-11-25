@@ -3,9 +3,9 @@
     <ul><?php foreach($this->livros as $livro): ?>
         <li>
             <div class="boxProduto">
-                <div id="image"><?= $livro->imageLink(true); ?></div>
-                <div> <?= $livro->getTitulo(); ?></div>
-                <div> <?= $livro->getAutor(); ?> </div>
+                <p id="image"><?= $livro->imageLink(true); ?></p>
+                <p class="tituloProduto"> <?= $livro->getTitulo(); ?></p>
+                <p class="autorProdutos"> <?= $livro->getAutor(); ?> </p>
             </div>
         </li>
     <?php endforeach; ?></ul>
