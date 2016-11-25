@@ -13,6 +13,7 @@
             <td width="40%"><?= $atendimento->getResposta(); ?></td>
             <td width="30%"><a href="admin/atendimentos/edit/<?= $atendimento->getId(); ?>">Editar</a></td>
             <td width="20%"><a href="admin/atendimentos/remove/<?= $atendimento->getId(); ?>">Remover</a></td>
+
         </tr>
     <?php endforeach; ?>
     </tbody>
