@@ -39,6 +39,7 @@
     <label for="image">Imagem:</label>
     <input type="file" name="image">
 
+    <div class="alertError"><?= $this->erro; ?></div>
     <br><br>
     <input type="submit" value="Enviar">
 </form>

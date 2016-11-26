@@ -7,6 +7,7 @@
     <label for="resposta">Resposta:</label><br>
     <textarea type="text" name="resposta" cols="50" ><?= $this->atendimento->getResposta(); ?></textarea>
 
+    <div class="alertError"><?= $this->erro; ?></div>
     <br><br>
     <input type="submit" value="Enviar">
 </form>

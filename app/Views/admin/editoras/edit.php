@@ -3,6 +3,7 @@
     <label for="nome">Nome:</label>
     <input type="text" name="nome" value="<?= $this->editora->getNome(); ?>">
 
+    <div class="alertError"><?= $this->erro; ?></div>
     <br><br>
     <input type="submit" value="Enviar">
 </form>

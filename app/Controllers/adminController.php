@@ -111,8 +111,23 @@ class adminController extends Controller {
             $titulo = "Editar livro '{$livro->getTitulo()}'";
         }
 
-        //Se enviou algo, tenta atualizar (ou cadastrar)
         if($this->isPost()) {
+            if(!$this->getPost('titulo'))
+                $erro = "Você não inseriu um titulo!";
+            if(!$this->getPost('preco'))
+                $erro = "Você não inseriu um preço!";
+            if(!$this->getPost('autor'))
+                $erro = "Você não inseriu um autor!";
+            if(!$this->getPost('descricao'))
+                $erro = "Você não inseriu uma descrição!";
+            if(!$this->getPost('categoria_id'))
+                $erro = "Você não selecionou uma categoria!";
+            if(!$this->getPost('editora_id'))
+                $erro = "Você não selecionou uma editora!";
+        }
+
+        //Se enviou algo, tenta atualizar (ou cadastrar)
+        if($this->isPost() && $erro == '') {
 
             $livro->setAll($_POST);
             $lt->setLivro($livro);
@@ -199,8 +214,13 @@ class adminController extends Controller {
             $titulo = "Editar categoria '{$categoria->getNome()}'";
         }
 
-        //Se enviou algo, tenta atualizar (ou cadastrar)
         if($this->isPost()) {
+            if(!$this->getPost('nome'))
+                $erro = "Você não inseriu um nome!";
+        }
+
+        //Se enviou algo, tenta atualizar (ou cadastrar)
+        if($this->isPost() && $erro == '') {
 
             $categoria->setAll($_POST);
             $ct->setCategoria($categoria);
@@ -262,6 +282,7 @@ class adminController extends Controller {
         $et = new EditorasTable();
 
         $titulo = "";
+        $erro = "";
 
         if($id < 0) { //Nova Editora
             $editora = new Editora();
@@ -272,8 +293,13 @@ class adminController extends Controller {
             $titulo = "Editar editora '{$editora->getNome()}'";
         }
 
-        //Se enviou algo, tenta atualizar (ou cadastrar)
         if($this->isPost()) {
+            if(!$this->getPost('nome'))
+                $erro = "Você não inseriu um nome!";
+        }
+
+        //Se enviou algo, tenta atualizar (ou cadastrar)
+        if($this->isPost() && $erro == '') {
 
             $editora->setAll($_POST);
             $et->setEditora($editora);
@@ -347,8 +373,15 @@ class adminController extends Controller {
             $titulo = "Editar atendimento '{$atendimento->getPergunta()}'";
         }
 
-        //Se enviou algo, tenta atualizar (ou cadastrar)
         if($this->isPost()) {
+            if(!$this->getPost('pergunta'))
+                $erro = "Você não inseriu uma pergunta!";
+            if(!$this->getPost('resposta'))
+                $erro = "Você não inseriu uma resposta!";
+        }
+
+        //Se enviou algo, tenta atualizar (ou cadastrar)
+        if($this->isPost() && $erro == '') {
 
             $atendimento->setAll($_POST);
             $at->setAtendimento($atendimento);
