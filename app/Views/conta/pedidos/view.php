@@ -8,8 +8,7 @@
     <table style="width: 100%; text-align: center">
         <thead>
         <tr>
-            <th width="10%">ID</th>
-            <th width="30%">Data</th>
+            <th width="40%">Data</th>
             <th width="20%">Quantidade de Itens</th>
             <th width="20%">Valor</th>
             <th width="20%">Detalhes</th>
@@ -18,7 +17,6 @@
         <tbody>
         <?php foreach ($this->pedidos as $pedido): ?>
             <tr>
-                <td><?= $pedido->getId(); ?></td>
                 <td><?= $pedido->getData() ?></td>
                 <td><?= count($pedido->getVendaItens()) ?></td>
                 <td>R$ <?= $pedido->getValor() ?></td>
