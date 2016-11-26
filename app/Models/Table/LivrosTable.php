@@ -23,8 +23,8 @@ class LivrosTable extends Table {
     }
 
     public function getMaisVendidos($quantidade) {
-        $campos = ["*", "(SELECT count(*) FROM venda_itens WHERE livro_id = id) as quantidade"];
-        return parent::get($campos, null, null, "quantidade", $quantidade);
+        $campos = ["*", "(SELECT count(*) FROM venda_itens WHERE venda_itens.livro_id = livros.id) as quantidade"];
+        return parent::get($campos, null, null, "quantidade DESC", $quantidade);
     }
 
     /**
