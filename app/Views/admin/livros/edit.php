@@ -5,7 +5,7 @@
 
     <br>
     <label for="autor">Preço:</label>
-    <input type="text" name="preco" value="<?= $this->livro->getPreco(); ?>">
+    <input type="number" name="preco" value="<?= $this->livro->getPreco(); ?>" step=0.01 min="1">
 
     <br>
     <label for="autor">Autor:</label>
