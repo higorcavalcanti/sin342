@@ -1,4 +1,4 @@
-<h1><?= $this->title ?></h1>
+<h1><?= $this->titulo ?></h1>
 <div id="produtos">
     <ul><?php foreach ($this->livros as $livro): ?>
             <li>
