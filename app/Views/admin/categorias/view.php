@@ -17,3 +17,9 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+<br>
+<div>
+    <a href="admin/categorias/add">
+        <button class="carrinhoInput" type="button">Adicionar</button>
+    </a>
+</div>
