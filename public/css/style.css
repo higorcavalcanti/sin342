@@ -101,6 +101,7 @@ header {
 }
 .livro-img-thumb {
 	max-width: 150px;
+	max-height: 150px;
 	height: auto;
 }
 
