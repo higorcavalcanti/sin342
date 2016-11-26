@@ -5,7 +5,7 @@
 <footer>
     <div class="conteudoFooter">
         <a href="./">
-            <img src="public/img/logo_footer.png" />
+            <img src="public/img/logo.png" />
         </a>
         <div class="textoFooter">
             Copyright &copy; <?= copyright('2016') ?> - <a href="./">Livraria Virtual</a> | Todos direitos reservados.

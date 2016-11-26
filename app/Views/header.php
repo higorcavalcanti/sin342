@@ -11,7 +11,7 @@
 <header>
     <div id="logo">
         <a href="./">
-            <img src="public/img/logo.png" alt="" title="" border="0" width="202" height="85" />
+            <img src="public/img/logo.png" alt="Logo da empresa" title="Logo da empresa"/>
         </a>
     </div>
 

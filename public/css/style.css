@@ -52,13 +52,18 @@ header {
 	text-align: right;
 }
 .fonteTabelas{
-	font-style: 13px;
+	font-size: 13px;
 }
 
 #logo {
 	float: left;
 	padding: 45px 0 0 15px;
 	clear: both;
+}
+
+#logo img {
+	max-width: 202px;
+	max-height: 85px;
 }
 
 #search {
@@ -194,6 +199,7 @@ footer .conteudoFooter {
 }
 
 footer .conteudoFooter img {
+	max-width: 140px;
 	padding: 50px 0 0 10px ;
 	float: left;
 }
