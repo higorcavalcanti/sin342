@@ -9,13 +9,4 @@ class homeController extends Controller {
         $livros = $livrosTable->getAll();
         $this->_page->view('index', compact('livros', 'titulo'));
     }
-
-	public function vendidos() {
-
-        $titulo = "Livros mais vendidos";
-
-	    $livrosTable = new LivrosTable();
-        $livros = $livrosTable->getMaisVendidos(12);
-        $this->_page->view('index', compact('livros', 'titulo'));
-	}
 }
