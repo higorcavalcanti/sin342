@@ -220,6 +220,77 @@ class adminController extends Controller {
 
 
 
+    /*
+     *
+     * Editoras
+     *
+     */
+    public function editoras() {
+        $action = $this->getParam(0);
+        $id = $this->getParam(1);
+
+        if($action == "add") {
+            return $this->editoras_edit(-1);
+        }
+        else if($action == "remove") {
+            return $this->editoras_remove($id);
+        }
+        else if($action == "edit") {
+            return $this->editoras_edit($id);
+        }
+        else {
+            $et = new EditorasTable();
+            $editoras = $et->getAll();
+
+            $this->_page->adminView("admin/editoras/view", compact('editoras'));
+        }
+    }
+
+    public function editoras_remove($id) {
+
+        $et = new EditorasTable();
+
+        //Se a Editora existe
+        if($editora = $et->getById($id)) {
+            $et->delete();
+        }
+        $this->redirect("admin/editoras");
+    }
+
+    public function editoras_edit($id) {
+
+        $et = new EditorasTable();
+
+        $titulo = "";
+
+        if($id < 0) { //Nova Editora
+            $editora = new Editora();
+            $titulo = "Adicionar nova editora";
+        }
+        else {
+            $editora = $et->getById($id);
+            $titulo = "Editar editora '{$editora->getNome()}'";
+        }
+
+        //Se enviou algo, tenta atualizar (ou cadastrar)
+        if($this->isPost()) {
+
+            $editora->setAll($_POST);
+            $et->setEditora($editora);
+
+            if($id < 0) { //Nova
+                $et->insert();
+            } else {
+                $et->update();
+            }
+
+            $this->redirect("admin/editoras");
+        }
+
+        $this->_page->adminView("admin/editoras/edit", compact('editora','titulo'));
+    }
+
+
 
 
 
