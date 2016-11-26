@@ -209,6 +209,9 @@ footer .conteudoFooter .textoFooter {
 	font-size: 13px;
 	color: #F0F4F5;
 }
+footer .conteudoFooter .textoFooter a {
+	color: #e9353d;
+}
 
 
 
