@@ -97,6 +97,7 @@ class adminController extends Controller {
         $it = new ImagesTable();
 
         $titulo = "";
+        $erro = "";
         $categorias = $ct->getAll();
         $editoras = $et->getAll();
 
@@ -156,7 +157,7 @@ class adminController extends Controller {
             $this->redirect("admin/livros");
         }
 
-        $this->_page->adminView("admin/livros/edit", compact('livro', 'editoras', 'categorias', 'titulo'));
+        $this->_page->adminView("admin/livros/edit", compact('livro', 'editoras', 'categorias', 'titulo', 'erro'));
     }
 
 
@@ -204,6 +205,7 @@ class adminController extends Controller {
         $ct = new CategoriasTable();
 
         $titulo = "";
+        $erro = "";
 
         if($categoria_id < 0) { //Nova categoria
             $categoria = new Categoria();
@@ -234,7 +236,7 @@ class adminController extends Controller {
             $this->redirect("admin/categorias");
         }
 
-        $this->_page->adminView("admin/categorias/edit", compact('categoria','titulo'));
+        $this->_page->adminView("admin/categorias/edit", compact('categoria','titulo', 'erro'));
     }
 
 
@@ -313,7 +315,7 @@ class adminController extends Controller {
             $this->redirect("admin/editoras");
         }
 
-        $this->_page->adminView("admin/editoras/edit", compact('editora','titulo'));
+        $this->_page->adminView("admin/editoras/edit", compact('editora','titulo', 'erro'));
     }
 
 
@@ -363,6 +365,7 @@ class adminController extends Controller {
         $at = new AtendimentosTable();
 
         $titulo = "";
+        $erro = '';
 
         if($atendimento_id < 0) { //Novo Atendimento
             $atendimento = new Atendimento();
@@ -395,6 +398,6 @@ class adminController extends Controller {
             $this->redirect("admin/atendimentos");
         }
 
-        $this->_page->adminView("admin/atendimentos/edit", compact('atendimento','titulo'));
+        $this->_page->adminView("admin/atendimentos/edit", compact('atendimento','titulo', 'erro'));
     }
 }
