@@ -35,7 +35,7 @@ class searchController extends Controller {
 
     private function search($tipo, $pesquisa, $livros) {
 
-        $title = "Mostrando livros que correspondem à pesquisa por {$tipo}: <i>'{$pesquisa}'</i>";
-        $this->_page->view('search/index', compact('livros', 'title'));
+        $titulo = "Mostrando livros que correspondem à pesquisa por {$tipo}: <i>'{$pesquisa}'</i>";
+        $this->_page->view('index', compact('livros', 'titulo'));
     }
 }
