@@ -13,6 +13,7 @@
             <th>ID</th>
             <th>Data</th>
             <th>Quantidade de Itens</th>
+            <th>Valor da compra</th>
             <th>Visualizar</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
             <td><?= $item->getId() ?></td>
             <td><?= $item->getData(); ?></td>
             <td><?= count($item->getVendaItens()) ?></td>
+            <td>R$ <?= $item->getValor() ?></td>
             <td><a href="admin/vendas/<?= $item->getId(); ?>">Visualizar</a></td>
         </tr>
         <?php endforeach; ?>

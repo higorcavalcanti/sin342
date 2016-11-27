@@ -4,8 +4,9 @@
     <td width="10%"><b>Id</b></td>
     <td width="20%"><b>Data</b></td>
     <td width="30%"><b>Usuário</b></td>
-    <td width="20%"><b>Quantidade</b></td>
-    <td width="20%"><b>Visualizar</b></td>
+    <td width="10%"><b>Quantidade</b></td>
+    <td width="10%"><b>Valor</b></td>
+    <td width="10%"><b>Visualizar</b></td>
     </thead>
     <tbody>
     <?php foreach($this->vendas as $venda): ?>
@@ -14,6 +15,7 @@
             <td><?= $venda->getData(); ?></td>
             <td><?= $venda->getUsuario()->getNome(); ?></td>
             <td><?= count($venda->getVendaItens()) ?> item(s)</td>
+            <td>R$ <?= $venda->getValor(); ?></td>
             <td><a href="admin/vendas/<?= $venda->getId(); ?>">Visualizar</a></td>
         </tr>
     <?php endforeach; ?>

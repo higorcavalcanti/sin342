@@ -2,8 +2,9 @@
 
 <b>Data:</b> <?= $this->venda->getData() ?><br>
 <b>Usuário: </b><a href="admin/clientes/<?= $this->venda->getUsuario()->getId() ?>"><?= $this->venda->getUsuario()->getNome() ?> </a><br>
-<b>Quantidade de itens:</b> <?= count($this->venda->getVendaItens()) ?>
-<br><br>
+<b>Quantidade de itens:</b> <?= count($this->venda->getVendaItens()) ?><br>
+<b>Valor da compra:</b> R$ <?= $this->venda->getValor() ?><br>
+<br>
 
 <?php if( count($this->venda->getVendaItens()) ): ?>
 <h3>Detalhes dos Itens</h3>

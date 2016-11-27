@@ -14,7 +14,7 @@ class Persistencia {
     private $host = "localhost";
 	private $user = "root";
 	private $pass = "root";
-	private $db = "sin352";
+	private $db = "sin342";
 
 
     /**
